@@ -1,0 +1,23 @@
+monilitic app development
+microservices
+microservice communications
+	-> RestClient
+	-> RabbitMQ 
+
+microservice cloud
+	-> config server
+	-> config client
+	-> feign
+	-> load balanser
+	-> erureka service discovery
+	-> routers
+	-> fall back operations
+
+
+
+    software
+			-> java 8 and above (17)
+			-> sts or eclipse
+			-> mysql / mongo db / redis
+			-> rabbit mq 
+
