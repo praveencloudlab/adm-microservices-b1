@@ -7,8 +7,9 @@ import org.springframework.stereotype.Service;
 
 import com.cts.ecart.dao.ProductDao;
 import com.cts.ecart.entity.Product;
+import com.cts.ecart.entity.Stock;
 @Service
-public class ProductServiceImpl implements ProductService {
+public class ProductServiceImpl implements ProductService, ProductInventoryUpdate {
 	
 	@Autowired
 	private ProductDao productDao;
@@ -70,5 +71,55 @@ public class ProductServiceImpl implements ProductService {
 		// TODO Auto-generated method stub
 		return productDao.findByCategory_CategoryId(categoryId);
 	}
+
+	@Override
+	public Product saveProduct(Product product) {
+		// TODO Auto-generated method stub
+		return productDao.save(product);
+	}
+
+	@Override
+	public List<Product> saveAllProducts(List<Product> products) {
+		// TODO Auto-generated method stub
+		return productDao.saveAll(products);
+	}
+
+	@Override
+	public void deleteProductById(int productId) {
+		productDao.deleteById(productId);
+		
+	}
+
+	@Override
+	public void deleteProduct(Product product) {
+		productDao.delete(product);	
+	}
+	
+	
+	
+	//update inventory information 
+	@Override
+	public Product updateInventory(int productId,int quantity) {
+		Product product = productDao.findById(productId).orElse(null);
+		if(product!=null) {
+			
+			Stock stock = product.getStock();
+			stock.setStock(stock.getStock()-quantity);
+			product.setStock(stock);
+			productDao.save(product);
+			return product;
+			
+		}
+		return null;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 }

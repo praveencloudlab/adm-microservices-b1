@@ -4,8 +4,11 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -76,6 +79,40 @@ public class SearchServiceResource {
 		// TODO Auto-generated method stub
 		return productService.findByCategoryId(categoryId);
 	}
+	
+	
+	// CRUD OPERATIONS
+	//==========================
+	@PostMapping
+	public Product saveProduct(@RequestBody Product product) {
+		// TODO Auto-generated method stub
+		return productService.saveProduct(product);
+	}
+
+	@PostMapping("/saveAll")
+	public List<Product> saveAllProducts(@RequestBody List<Product> products) {
+		// TODO Auto-generated method stub
+		return productService.saveAllProducts(products);
+	}
+
+	@DeleteMapping("/{productId}")
+	public void deleteProductById(@PathVariable int productId) {
+		productService.deleteProductById(productId);
+		
+	}
+
+	@DeleteMapping
+	public void deleteProduct(@RequestBody Product product) {
+		productService.deleteProduct(product);	
+	}
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 

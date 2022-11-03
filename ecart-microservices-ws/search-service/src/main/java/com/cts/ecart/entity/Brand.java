@@ -8,7 +8,6 @@ import javax.persistence.Id;
 public class Brand {
 
 	@Id
-	@GeneratedValue
 	private int brandId;
 	private String brandTitle;
 

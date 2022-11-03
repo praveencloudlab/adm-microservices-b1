@@ -31,7 +31,6 @@ public class Product {
 	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinColumn(name = "categoryId")
 	private Category category;
-	
 	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinColumn(name = "stockId")
 	private Stock stock;

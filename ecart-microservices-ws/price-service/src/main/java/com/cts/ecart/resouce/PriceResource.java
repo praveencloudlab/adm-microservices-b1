@@ -26,8 +26,8 @@ public class PriceResource {
 	}
 	
 	@GetMapping("/product/{productId}")
-	public Price findPriceByProductId(@PathVariable int productId) {
-		return priceService.findByProductId(productId);
+	public double findPriceByProductId(@PathVariable int productId) {
+		return priceService.findByProductId(productId).getPrice();
 	}
 	
 	

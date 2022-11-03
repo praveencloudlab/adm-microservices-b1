@@ -16,6 +16,10 @@ public interface ProductService {
 	List<Product> findByBrandId(int brandId);
 	List<Product> findByCategoryTitle(String categoryTitle);
 	List<Product> findByCategoryId(int categoryId);
+	Product saveProduct(Product product);
+	List<Product> saveAllProducts(List<Product> products);
+	void deleteProductById(int productId);
+	void deleteProduct(Product product);
 	
 
 }
