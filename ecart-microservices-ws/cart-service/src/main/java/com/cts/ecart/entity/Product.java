@@ -6,6 +6,16 @@ public class Product {
 	private String productTitle;
 	private double productPrice;
 
+	private Stock stock;
+
+	public Stock getStock() {
+		return stock;
+	}
+
+	public void setStock(Stock stock) {
+		this.stock = stock;
+	}
+
 	public int getProductId() {
 		return productId;
 	}

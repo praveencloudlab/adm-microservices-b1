@@ -5,7 +5,7 @@ import java.util.List;
 import com.cts.ecart.entity.ItemLine;
 import com.cts.ecart.entity.Product;
 
-public interface CartService {
+public interface CartService{
 
 	public ItemLine save(String user, int productId,int qty);
 	
