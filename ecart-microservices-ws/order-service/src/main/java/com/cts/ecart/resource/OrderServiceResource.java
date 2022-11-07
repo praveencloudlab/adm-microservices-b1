@@ -20,8 +20,6 @@ public class OrderServiceResource {
 	@Autowired
 	private OrderServiceImpl orderService;
 	
-	
-	
 	@GetMapping("/{user}")
 	public List<Order> placeOrder(@PathVariable String user) {
 		

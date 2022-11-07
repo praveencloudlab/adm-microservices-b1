@@ -10,8 +10,8 @@ import javax.persistence.Id;
 @Entity(name = "orders")
 public class Order {
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int orderId;
+	//@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private long orderId;
 	private LocalDateTime orderDate;
 	private String paymentStatus;
 	private int qty;
@@ -36,11 +36,11 @@ public class Order {
 		this.userId = userId;
 	}
 
-	public int getOrderId() {
+	public long getOrderId() {
 		return orderId;
 	}
 
-	public void setOrderId(int orderId) {
+	public void setOrderId(long orderId) {
 		this.orderId = orderId;
 	}
 
