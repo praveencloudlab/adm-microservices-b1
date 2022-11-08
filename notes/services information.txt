@@ -12,8 +12,8 @@ service communications
 ==============================
 -> search,cart and order services going to use RestTemplate for price-service
 -> order-service uses RestTemlate from cart service
--> order-service uses rabbit call(sender) to the email-service (EMAIL-Q)
--> order-service uses rabbit call(sender) to the search-service(INVENTORY-Q)
+-> order-service uses rabbit call(sender) to the email-service (EMAILQ)
+-> order-service uses rabbit call(sender) to the search-service(INVENTORYQ)
 -> search-service uses rabbit call(receiver) from INVENTORY-Q
 -> search-service uses RestTemplate call to the price-service
 -> email-service uses rabbit call(receiver) from EMAIL-Q
