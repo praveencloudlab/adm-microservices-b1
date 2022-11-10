@@ -22,9 +22,12 @@ public class OrderServiceResource {
 	
 	@GetMapping("/{user}")
 	public List<Order> placeOrder(@PathVariable String user) {
-		
 		return orderService.placeOrder(user);
+	}
+	@GetMapping("/listOrders/{userId}")
+	public List<Order> findAllOrders(@PathVariable int userId){
 		
+		return orderService.findAllOrders(userId);
 	}
 
 }
